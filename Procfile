@@ -1,1 +1,1 @@
-web: gunicorn gettingstarted.wsgi
+discordbot: python main.py
