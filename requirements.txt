@@ -1,0 +1,17 @@
+aiohttp
+async-timeout
+attrs
+cffi
+chardet
+discord.py
+idna
+multidict
+pycparser
+PyNaCl
+six
+typing-extensions
+yarl
+ffmpeg-python
+gTTS
+python-dotenv
+gunicorn
