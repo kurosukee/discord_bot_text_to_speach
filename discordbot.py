@@ -26,7 +26,7 @@ async def join(ctx):
 async def bye(ctx):
     vc = ctx.voice_client
     if vc is None:
-        await ctx.channel.send('もういないわよ')
+        await ctx.channel.send('ボイチャにいないわよ')
         return
     else:
         await vc.disconnect()
