@@ -1,8 +1,8 @@
 import discord
 import ffmpeg
 import os
-import settings
 from discord.ext import commands
+from os import getenv
 from gtts import gTTS
 
 bot = commands.Bot(command_prefix='!')
@@ -55,4 +55,4 @@ async def on_message(message):
         except OSError as e:
             return
 
-bot.run(settings.BOT)
+bot.run(getenv('BOT'))
