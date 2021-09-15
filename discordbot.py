@@ -46,7 +46,7 @@ async def on_message(message):
     if vc == None:
         return
     else:
-        content = re.sub('\(.*?\)',"顔文字",　message.content)
+        content = re.sub('\(.*?\)',"顔文字", message.content)
         tmpfile = str(message.id) + '.mp3'
         tts = gTTS(text=content, lang='ja')
         tts.save(tmpfile)
