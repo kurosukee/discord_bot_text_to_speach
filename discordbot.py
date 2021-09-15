@@ -1,5 +1,6 @@
 import discord
 import ffmpeg
+import re
 import os
 from discord.ext import commands
 from os import getenv
@@ -39,12 +40,15 @@ async def on_message(message):
     if message.content == 'うー':
         await message.channel.send('にゃー')
         return
+    if message.content.startswith('http'):
+        return
     vc = message.guild.voice_client
     if vc == None:
         return
     else:
+        content = re.sub('\(.*?\)',"顔文字",　message.content)
         tmpfile = str(message.id) + '.mp3'
-        tts = gTTS(text=message.content, lang='ja')
+        tts = gTTS(text=content, lang='ja')
         tts.save(tmpfile)
         source = discord.FFmpegPCMAudio(tmpfile)
         vc.play(source)
